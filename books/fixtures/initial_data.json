@@ -1,0 +1,118 @@
+[
+{
+  "model": "books.authors",
+  "pk": 1,
+  "fields": {
+    "first_name": "Gayle",
+    "last_name": "McDowell"
+  }
+},
+{
+  "model": "books.authors",
+  "pk": 2,
+  "fields": {
+    "first_name": "Mark",
+    "last_name": "Lutz"
+  }
+},
+{
+  "model": "books.authors",
+  "pk": 3,
+  "fields": {
+    "first_name": "Robert",
+    "last_name": "Martin"
+  }
+},
+{
+  "model": "books.authors",
+  "pk": 4,
+  "fields": {
+    "first_name": "David",
+    "last_name": "Beazley"
+  }
+},
+{
+  "model": "books.authors",
+  "pk": 5,
+  "fields": {
+    "first_name": "Brian",
+    "last_name": "Jones"
+  }
+},
+{
+  "model": "books.books",
+  "pk": 1,
+  "fields": {
+    "title": "Clean Code : A Handbook of Agile Software Craftsmanship",
+    "isbn": "0132350882",
+    "price": "32.98"
+  }
+},
+{
+  "model": "books.books",
+  "pk": 2,
+  "fields": {
+    "title": "Learning Python",
+    "isbn": "1449355730",
+    "price": "31.24"
+  }
+},
+{
+  "model": "books.books",
+  "pk": 3,
+  "fields": {
+    "title": "Cracking the Coding Interview",
+    "isbn": "9780984782857",
+    "price": "34.89"
+  }
+},
+{
+  "model": "books.books",
+  "pk": 4,
+  "fields": {
+    "title": "Python Cookbook",
+    "isbn": "1449340377",
+    "price": "30.00"
+  }
+},
+{
+  "model": "books.authorstobooks",
+  "pk": 1,
+  "fields": {
+    "book": 1,
+    "author": 3
+  }
+},
+{
+  "model": "books.authorstobooks",
+  "pk": 2,
+  "fields": {
+    "book": 2,
+    "author": 2
+  }
+},
+{
+  "model": "books.authorstobooks",
+  "pk": 3,
+  "fields": {
+    "book": 3,
+    "author": 1
+  }
+},
+{
+  "model": "books.authorstobooks",
+  "pk": 4,
+  "fields": {
+    "book": 4,
+    "author": 4
+  }
+},
+{
+  "model": "books.authorstobooks",
+  "pk": 5,
+  "fields": {
+    "book": 4,
+    "author": 5
+  }
+}
+]
