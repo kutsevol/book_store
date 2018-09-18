@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Logging
+{% endblock %}
+
+{% block content %}
+    {% for log in logs|slice:"0:10" %}
+        <p>
+            Time: {{ log.create_datetime }} - Request: {{ log.msg }}
+        </p>
+    {% endfor %}
+{% endblock %}
