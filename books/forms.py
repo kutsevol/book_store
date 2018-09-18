@@ -8,7 +8,7 @@ class DateInput(forms.DateInput):
     input_type = 'date'
 
 
-class EditBookForm(ModelForm):
+class BookForm(ModelForm):
     class Meta:
         model = Books
         fields = '__all__'
