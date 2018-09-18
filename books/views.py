@@ -1,8 +1,8 @@
-from django.http import HttpResponseRedirect
-from django.views.generic import ListView, UpdateView, CreateView
+from django.http import HttpResponseRedirect, Http404
+from django.views.generic import ListView, UpdateView, CreateView, DeleteView
 from django.urls import reverse
 
-from .forms import EditBookForm
+from .forms import BookForm
 from .models import Books, AuthorsToBooks, StatusLog
 
 
@@ -27,8 +27,7 @@ class IndexView(ListView):
 
 class EditBook(UpdateView):
     model = Books
-    form_class = EditBookForm
-    # fields = '__all__'
+    form_class = BookForm
     template_name = 'book_edit.html'
     context_object_name = 'books'
 
@@ -50,7 +49,7 @@ class EditBook(UpdateView):
 
 class AddBook(CreateView):
     model = Books
-    fields = '__all__'
+    form_class = BookForm
     template_name = 'book_add.html'
     context_object_name = 'books'
 
@@ -68,6 +67,13 @@ class AddBook(CreateView):
             authors.save()
 
         return HttpResponseRedirect(self.get_success_url())
+
+
+class DeleteBook(DeleteView):
+    model = Books
+
+    def get_success_url(self):
+        return reverse('books')
 
 
 class ViewLogs(ListView):
