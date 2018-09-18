@@ -37,6 +37,12 @@
                             Edit book
                         </a>
                     </td>
+                    <td>
+                        <form method="POST" action="{% url "book_delete" pk=book.pk %}">
+                            {% csrf_token %}
+                            <button type="submit">Remove book</button>
+                        </form>
+                    </td>
                 </tr>
             {% endfor %}
         {% else %}
