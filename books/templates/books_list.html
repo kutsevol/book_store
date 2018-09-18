@@ -1,10 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+    Books store
+{% endblock %}
+
+{% block content %}
+
+    <a href="{% url 'book_add' %}">
+        Add book
+    </a>
+
+    <p></p>
+
+    <table border="1">
+        <thead>
+            <th>Authors</th>
+            <th>Title</th>
+            <th>ISBN</th>
+            <th>Price</th>
+            <th>
+                <a href="{% url 'books' %}?ordering=published_date&order={% if order == 'desc' %}asc{% else %}desc{% endif %}">
+                    Date
+                </a>
+            </th>
+        </thead>
+        {% if books %}
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.all_authors }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.isbn }}</td>
+                    <td>{{ book.price }}</td>
+                    <td>{{ book.published_date }}</td>
+                    <td>
+                        <a href="{% url 'book_edit' pk=book.pk %}">
+                            Edit book
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3">Database is empty now.</td>
+            </tr>
+        {% endif %}
+    </table>
+
+    <br/>
+
+    <a href="{% url 'logs' %}">
+        Watch logs
+    </a>
+
+    <p>
+        ©Copyright {% now "Y"  %}
+    </p>
+
+{% endblock %}

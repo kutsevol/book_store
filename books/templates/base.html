@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+{#        {% blocktrans %}#}
+{#            Copyright {{ current_year }}#}
+{#        {% endblocktrans %}#}
+    </body>
 </html>
